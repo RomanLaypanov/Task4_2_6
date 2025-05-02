@@ -27,8 +27,6 @@ public class Print {
             }
         }
 
-
-
         String str = Arrays.toString(sort);
         outputStream.write(str.getBytes()); // записываю sort в outputStream
 
