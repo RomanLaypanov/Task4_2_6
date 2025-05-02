@@ -1,12 +1,13 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class Print {
-    public static void print(InputStream inputStream, OutputStream outputStream) throws IOException {
+    public static String print(InputStream inputStream, OutputStream outputStream) throws IOException {
         byte[] bytes = inputStream.readAllBytes(); // inputStream считывает все байты в массиы
-        inputStream.close(); // закрываю inputStream
 
         int length = 0;
 
@@ -26,8 +27,11 @@ public class Print {
             }
         }
 
-        outputStream.write(sort); // записываю sort в outputStream
-        System.out.println(Arrays.toString(sort)); // вывожу каждый элемент sort
-        outputStream.close(); // закрываю outputStream
+
+
+        String str = Arrays.toString(sort);
+        outputStream.write(str.getBytes()); // записываю sort в outputStream
+
+        return str;
     }
 }

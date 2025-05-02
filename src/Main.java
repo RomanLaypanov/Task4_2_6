@@ -7,7 +7,7 @@ public class Main {
 
         try (InputStream inputStream = new ByteArrayInputStream(array);
              OutputStream outputStream = new ByteArrayOutputStream()) {
-            Print.print(inputStream, outputStream);
+            System.out.println(Print.print(inputStream, outputStream));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
