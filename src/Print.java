@@ -9,7 +9,8 @@ public class Print {
 
         for (byte b : evenNumbers) {
             if ((b & 1) == 0) {
-                String str = Arrays.toString(String.valueOf(b).split(" "));
+                String str = String.valueOf(b) + ", ";
+                str = str.replaceAll(",", " ");
                 outputStream.write(str.getBytes());
             }
         }
