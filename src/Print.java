@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Arrays;
 
 public class Print {
     public static String print(InputStream inputStream, OutputStream outputStream) throws IOException {
