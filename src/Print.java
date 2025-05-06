@@ -7,13 +7,12 @@ public class Print {
         byte[] evenNumbers = inputStream.readAllBytes();
 
         for (byte b : evenNumbers) {
-            if ((b & 1) == 0) {
+            if ((b % 2) == 0) {
                 String str = String.valueOf(b) + ", ";
-                str = str.replaceAll(",", " ");
                 outputStream.write(str.getBytes());
             }
         }
 
-        return outputStream.toString();
+        return outputStream.toString().replaceAll(", $", " ");
     }
 }
